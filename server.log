@@ -907,3 +907,78 @@ Resizing image...
 Image converted successfully, size: 59742
 HTML content generated, length: 549400
  POST /api/generate-pdf 200 in 3640ms
+ ○ Compiling / ...
+ ✓ Compiled / in 644ms (1502 modules)
+ GET / 200 in 701ms
+ GET /epk 200 in 45ms
+ ✓ Compiled /mixes in 334ms (1512 modules)
+ GET /mixes 200 in 570ms
+ ✓ Compiled in 551ms (1503 modules)
+ GET /mixes 200 in 161ms
+ ✓ Compiled /gigs in 275ms (1497 modules)
+ GET /gigs 200 in 356ms
+ ✓ Compiled in 536ms (1511 modules)
+ GET /gigs 200 in 99ms
+ ✓ Compiled in 273ms (1511 modules)
+ GET /gigs 200 in 61ms
+ ○ Compiling /contact ...
+ ✓ Compiled /contact in 1005ms (1647 modules)
+ GET /contact 200 in 1080ms
+ GET / 200 in 40ms
+ ✓ Compiled in 1074ms (1661 modules)
+ GET / 200 in 84ms
+ ✓ Compiled in 710ms (1661 modules)
+ GET / 200 in 91ms
+ ✓ Compiled in 801ms (1661 modules)
+ GET / 200 in 76ms
+ GET /epk 200 in 97ms
+ GET /mixes 200 in 41ms
+ GET /gigs 200 in 48ms
+ GET /contact 200 in 77ms
+ GET /gigs 200 in 54ms
+ GET /mixes 200 in 18ms
+ GET /epk 200 in 28ms
+ GET / 200 in 24ms
+ GET /epk 200 in 50ms
+ GET /mixes 200 in 30ms
+ GET /gigs 200 in 24ms
+ GET /mixes 200 in 26ms
+ GET /gigs 200 in 65ms
+ GET /epk 200 in 24ms
+ GET / 200 in 21ms
+ GET /epk 200 in 83ms
+ ✓ Compiled in 940ms (1661 modules)
+ GET /epk 200 in 101ms
+ ✓ Compiled in 682ms (1661 modules)
+ GET /epk 200 in 96ms
+ ✓ Compiled in 841ms (1519 modules)
+ GET /epk 200 in 85ms
+ ✓ Compiled in 431ms (1519 modules)
+ GET /epk 200 in 161ms
+ GET /contact 200 in 117ms
+ ✓ Compiled in 567ms (1519 modules)
+ GET /contact 200 in 79ms
+ ✓ Compiled in 758ms (1519 modules)
+ GET /contact 200 in 54ms
+ ✓ Compiled in 266ms (1519 modules)
+ GET /contact 200 in 50ms
+ GET / 200 in 60ms
+ GET /epk 200 in 64ms
+ GET /mixes 200 in 62ms
+ GET /gigs 200 in 32ms
+ GET /contact 200 in 53ms
+ GET /mixes 200 in 29ms
+ GET /epk 200 in 21ms
+ GET /mixes 200 in 19ms
+ ✓ Compiled in 1000ms (1519 modules)
+ GET /mixes 200 in 121ms
+ ✓ Compiled in 471ms (1519 modules)
+ GET /mixes 200 in 81ms
+ GET /epk 200 in 30ms
+ GET / 200 in 22ms
+ GET /gigs 200 in 47ms
+ GET / 200 in 20ms
+ ✓ Compiled in 996ms (1519 modules)
+ GET / 200 in 111ms
+ ✓ Compiled in 846ms (1519 modules)
+ GET / 200 in 58ms

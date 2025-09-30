@@ -50,7 +50,7 @@ export default function HomeScene() {
       {/* Content */}
       <div className="text-center max-w-xl relative z-10">
         <div className="mb-4">
-          <div className="relative h-20 md:h-24 w-48 md:w-56 mx-auto">
+          <div className="relative h-32 md:h-38 w-77 md:w-90 mx-auto">
             <Image 
               src="/images/tangletonwhite.png" 
               alt="Tangleton" 
@@ -62,7 +62,7 @@ export default function HomeScene() {
         <p className="mt-4 text-white/80">Los Angeles based DJ / Designer</p>
         <div className="mt-8 flex items-center justify-center gap-4">
           <GlitchButton onClick={() => router.push('/epk')}>View EPK</GlitchButton>
-          <GlitchButton onClick={() => router.push('/gigs')}>Gigs</GlitchButton>
+          <GlitchButton onClick={() => window.open('mailto:tangs.email@gmail.com?subject=DJ Booking Inquiry', '_blank')}>Book with Me</GlitchButton>
         </div>
       </div>
     </section>

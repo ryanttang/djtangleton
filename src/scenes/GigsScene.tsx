@@ -1,24 +1,20 @@
 "use client"
 export default function GigsScene() {
-  const gigs = [
-    { name: "Club VHS", date: "2025-10-31", city: "Los Angeles, CA", venue: "EchoPlex" },
-    { name: "RGB Fest", date: "2025-11-12", city: "San Diego, CA", venue: "Quartyard" },
-  ]
-  
   return (
-    <section className="h-dvh w-dvw p-6">
-      <h2 className="text-4xl font-boldonse rgb-split mb-4">Upcoming Shows</h2>
-      <ul className="space-y-3">
-        {gigs.map((g, i) => (
-          <li key={i} className="flex items-center justify-between border-b border-white/10 py-3">
-            <div className="text-white">
-              <div className="font-semibold">{g.name}</div>
-              <div className="text-white/60">{g.venue} — {g.city}</div>
-            </div>
-            <time className="text-accent-green">{g.date}</time>
-          </li>
-        ))}
-      </ul>
+    <section className="h-dvh w-dvw p-6 flex flex-col items-center justify-center">
+      <div className="text-center space-y-6">
+        <h2 className="text-4xl font-boldonse rgb-split">Upcoming Shows</h2>
+        <p className="text-white/60 text-lg">More info coming soon</p>
+        
+        <div className="mt-8">
+          <a 
+            href="mailto:tangs.email@gmail.com?subject=DJ Booking Inquiry"
+            className="relative inline-flex items-center justify-center px-6 py-3 font-semibold bg-black border border-fuchsia-500/60 text-white rounded-md transition-transform hover:translate-y-[-1px] active:translate-y-[0px] shadow-[0_0_0_1px_#0ff_inset] hover:shadow-[0_0_0_1px_#f0f_inset]"
+          >
+            <span className="relative rgb-split">Book Me Soon!</span>
+          </a>
+        </div>
+      </div>
     </section>
   )
 }

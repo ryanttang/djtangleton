@@ -6,7 +6,7 @@ import { quitplayingMixes, vibesRnBounceMixes, houseAndBounceMixes } from "@/con
 export default function MixesScene({ intercepted }: { intercepted?: boolean }) {
   
   return (
-    <section className="h-dvh w-dvw flex flex-col overflow-y-auto md:overflow-hidden">
+    <section className="h-dvh w-dvw flex flex-col overflow-y-auto pt-24">
       <header className="p-4 text-center">
         <h2 className="text-4xl font-boldonse rgb-split">Mixes</h2>
         <p className="text-white/60 mt-2 text-lg">Latest DJ mixes and live sessions</p>

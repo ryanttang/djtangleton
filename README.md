@@ -1,36 +1,122 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# DJ EPK - VHS/CRT Aesthetic Site
+
+A single-stage VHS/CRT aesthetic DJ site built with Next.js 14+, featuring smooth scene transitions, CRT effects, and a persistent audio player.
+
+## Features
+
+- **VHS/CRT Aesthetic**: Scanlines, noise, chromatic aberration, and glitch effects
+- **Single-Stage Navigation**: Smooth transitions between scenes without page reloads
+- **Persistent Audio Player**: WaveSurfer.js integration with VHS-styled controls
+- **Responsive Design**: Mobile-first approach with Tailwind CSS
+- **SEO Optimized**: Canonical routes for search engines
+- **Accessibility**: Respects prefers-reduced-motion and includes focus indicators
+
+## Tech Stack
+
+- **Framework**: Next.js 14+ (App Router, RSC)
+- **Styling**: Tailwind CSS + shadcn/ui (Radix primitives)
+- **Motion**: Framer Motion + Lenis (smooth scroll)
+- **Media/UI**: WaveSurfer.js, Embla Carousel, LightGallery
+- **Optional 3D FX**: @react-three/fiber + @react-three/postprocessing
+- **Forms**: react-hook-form + zod
+- **Analytics**: Ready for Plausible or PostHog
 
 ## Getting Started
 
-First, run the development server:
+1. **Install dependencies**:
+   ```bash
+   npm install
+   ```
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+2. **Add your assets**:
+   - Replace placeholder images in `/public/images/`
+   - Add grain texture to `/public/textures/grain.png`
+   - Add scanlines texture to `/public/textures/scanlines.png`
+   - Add sample audio to `/public/audio/sample.mp3`
+   - Add one-sheet PDF to `/public/epk/one-sheet.pdf`
+
+3. **Start development server**:
+   ```bash
+   npm run dev
+   ```
+
+4. **Open** [http://localhost:3000](http://localhost:3000) in your browser
+
+## Project Structure
+
+```
+src/
+├── app/
+│   ├── @scene/          # Intercepted routes for smooth transitions
+│   ├── _filters/        # SVG filters for VHS effects
+│   ├── layout.tsx       # Root layout with persistent shell
+│   ├── page.tsx         # Home page (Stage)
+│   ├── RouterView.tsx   # Motion wrapper for scene transitions
+│   ├── globals.css      # Global styles with CRT effects
+│   └── [routes]/        # Canonical SSR routes for SEO
+├── components/
+│   ├── ui/              # shadcn/ui components
+│   ├── buttons/         # Custom button components
+│   ├── cards/           # CRT-styled card components
+│   ├── media/           # Audio player, image components
+│   └── nav/             # Navigation components
+├── scenes/              # Scene components (Home, Press, Gigs, etc.)
+└── lib/                 # Utilities and helpers
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Customization
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Colors and Fonts
+Edit `tailwind.config.ts` to customize:
+- Accent colors (cyan, magenta, green)
+- Font families (Inter, Archivo Narrow, IBM Plex Mono)
+- CRT shadow effects
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### CRT Effects
+Modify `src/app/globals.css` to adjust:
+- Scanline opacity and frequency
+- Noise intensity and animation
+- Chromatic aberration strength
+- Glitch effects and timing
 
-## Learn More
+### Content
+Update scene components in `src/scenes/` to customize:
+- DJ name and bio
+- Gigs and events
+- Press quotes and images
+- Contact form fields
 
-To learn more about Next.js, take a look at the following resources:
+## Deployment
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+The project is ready for deployment on Vercel, Netlify, or any platform that supports Next.js.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+npm run build
+npm start
+```
 
-## Deploy on Vercel
+## Environment Variables
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Create `.env.local` for optional integrations:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```env
+NEXT_PUBLIC_SANITY_PROJECT_ID=your_project_id
+NEXT_PUBLIC_SANITY_DATASET=production
+```
+
+## Performance Notes
+
+- Images are optimized with Next.js Image component
+- CRT effects are CSS-based for optimal performance
+- Audio player uses WaveSurfer.js for efficient waveform rendering
+- Respects user's motion preferences for accessibility
+
+## Browser Support
+
+- Modern browsers with CSS Grid and Flexbox support
+- Web Audio API for audio player
+- CSS Custom Properties for theming
+
+## License
+
+MIT License - feel free to use this template for your DJ site!# djtangleton

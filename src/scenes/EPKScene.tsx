@@ -61,38 +61,79 @@ export default function EPKScene({ intercepted }: { intercepted?: boolean }) {
           </p>
           <div className="border-t border-white/20 pt-4">
             <h4 className="text-xl font-bold rgb-split mb-2">Location</h4>
-            <p className="text-white/80 text-lg">
-              Los Angeles, California
-            </p>
-            <p className="text-white/60 text-sm mt-2">
-              Available for bookings worldwide
-            </p>
+            <div className="flex justify-between items-start">
+              <div>
+                <p className="text-white/80 text-lg">
+                  Los Angeles, California
+                </p>
+                <p className="text-white/60 text-sm mt-2">
+                  Available for bookings worldwide
+                </p>
+              </div>
+              <a 
+                href="mailto:tangs.email@gmail.com?subject=DJ Booking Inquiry"
+                className="relative inline-flex items-center justify-center px-4 py-2 font-semibold bg-black border border-fuchsia-500/60 text-white rounded-md transition-transform hover:translate-y-[-1px] active:translate-y-[0px] shadow-[0_0_0_1px_#0ff_inset] hover:shadow-[0_0_0_1px_#f0f_inset] whitespace-nowrap"
+              >
+                <span className="relative rgb-split">Book Me Soon!</span>
+              </a>
+            </div>
           </div>
         </CRTCard>
 
-        {/* Column 2: Cities Played At + Mixes & Social Media */}
-        <div className="space-y-6 h-fit">
+        {/* Column 2: Played At + Genres */}
+        <div className="space-y-4 h-fit">
           <CRTCard className="p-4 h-fit">
-            <h3 className="text-2xl font-bold rgb-split mb-3">Cities Played At</h3>
-            <div className="space-y-1 text-white/80 text-sm">
-              <p>• Los Angeles, CA</p>
-              <p>• Long Beach, CA</p>
-              <p>• Shibuya, Japan</p>
+            <h3 className="text-2xl font-bold rgb-split mb-3">Played At:</h3>
+            <div className="grid grid-cols-3 gap-4">
+              <div>
+                <h4 className="text-lg font-semibold text-white/90 mb-2">Cities</h4>
+                <div className="space-y-1 text-white/80 text-sm">
+                  <p>• Los Angeles, CA</p>
+                  <p>• Long Beach, CA</p>
+                  <p>• Shibuya, Japan</p>
+                </div>
+              </div>
+              <div>
+                <h4 className="text-lg font-semibold text-white/90 mb-2">Parties</h4>
+                <div className="space-y-1 text-white/80 text-sm">
+                  <p>• ISOULATION</p>
+                  <p>• WAVY.FM</p>
+                  <p>• Down Bad Party</p>
+                </div>
+              </div>
+              <div>
+                <div className="space-y-1 text-white/80 text-sm mt-7">
+                  <p>• STIIIZY Holiday Party</p>
+                  <p>• Catalyst Capo Con</p>
+                  <p>• Riot Games</p>
+                  <p>• Toasty Radio</p>
+                </div>
+              </div>
             </div>
           </CRTCard>
 
           <CRTCard className="p-4 h-fit">
-            <h3 className="text-2xl font-bold rgb-split mb-3">Mixes & Social Media</h3>
+            <h3 className="text-2xl font-bold rgb-split mb-3">Genres</h3>
+            <p className="text-white/80 text-sm leading-relaxed">
+              House, Trap, Rap, R&B, Jersey Club, Baile Funk, Afrobeats, Future Beats, Phonk, Hip Hop, Classics, and Throwbacks.
+            </p>
+          </CRTCard>
+        </div>
+
+        {/* Column 3: Mixed by tangleton + Social Media + Listen to my Mixes */}
+        <div className="space-y-4 h-fit">
+          <CRTCard className="p-4 h-fit">
+            <h3 className="text-2xl font-bold rgb-split mb-3">Mixed by tangleton</h3>
+            <div className="space-y-1 text-white/80 text-sm">
+              <p>• QUITPLAYING Series</p>
+              <p>• WHATUDO Series</p>
+              <p>• AFTERTHEAFTERS Series</p>
+            </div>
+          </CRTCard>
+
+          <CRTCard className="p-4 h-fit">
+            <h3 className="text-2xl font-bold rgb-split mb-3">Social Media</h3>
             <div className="grid grid-cols-2 gap-3">
-              <a 
-                href="https://soundcloud.com/tangleton" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="flex items-center space-x-2 text-white hover:text-cyan-300 transition-colors text-sm"
-              >
-                <span className="text-lg">🎵</span>
-                <span>SoundCloud</span>
-              </a>
               <a 
                 href="https://instagram.com/tangleton" 
                 target="_blank" 
@@ -101,15 +142,6 @@ export default function EPKScene({ intercepted }: { intercepted?: boolean }) {
               >
                 <span className="text-lg">📷</span>
                 <span>Instagram</span>
-              </a>
-              <a 
-                href="https://youtube.com/@tangleton" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="flex items-center space-x-2 text-white hover:text-cyan-300 transition-colors text-sm"
-              >
-                <span className="text-lg">📺</span>
-                <span>YouTube</span>
               </a>
               <a 
                 href="https://tiktok.com/@djtangleton" 
@@ -122,15 +154,31 @@ export default function EPKScene({ intercepted }: { intercepted?: boolean }) {
               </a>
             </div>
           </CRTCard>
-        </div>
 
-        {/* Column 3: Genres */}
-        <CRTCard className="p-4 h-fit">
-          <h3 className="text-2xl font-bold rgb-split mb-3">Genres</h3>
-          <p className="text-white/80 text-sm leading-relaxed">
-            House, Trap, Rap, R&B, Jersey Club, Baile Funk, Afrobeats, Future Beats, Phonk, Hip Hop, Classics, and Throwbacks.
-          </p>
-        </CRTCard>
+          <CRTCard className="p-4 h-fit">
+            <h3 className="text-2xl font-bold rgb-split mb-3">Listen to my Mixes</h3>
+            <div className="grid grid-cols-2 gap-3">
+              <a 
+                href="https://soundcloud.com/tangleton" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex items-center space-x-2 text-white hover:text-cyan-300 transition-colors text-sm"
+              >
+                <span className="text-lg">🎵</span>
+                <span>SoundCloud</span>
+              </a>
+              <a 
+                href="https://youtube.com/@tangleton" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex items-center space-x-2 text-white hover:text-cyan-300 transition-colors text-sm"
+              >
+                <span className="text-lg">📺</span>
+                <span>YouTube</span>
+              </a>
+            </div>
+          </CRTCard>
+        </div>
 
         {/* Download One-Sheet */}
         <CRTCard className="p-6 md:col-span-2 lg:col-span-3">

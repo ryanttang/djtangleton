@@ -1,16 +1,16 @@
 import type { Config } from "tailwindcss"
-import { fontFamily } from "tailwindcss/defaultTheme"
+import defaultTheme from "tailwindcss/defaultTheme"
 
 export default {
-  darkMode: ["class"],
+  darkMode: "class",
   content: ["./src/**/*.{ts,tsx}"],
   theme: {
     extend: {
       fontFamily: {
-        sans: ["Inter", ...fontFamily.sans],
-        mono: ["IBM Plex Mono", ...fontFamily.mono],
-        display: ["Archivo Narrow", ...fontFamily.sans],
-        boldonse: ["Boldonse", ...fontFamily.sans],
+        sans: ["Inter", ...defaultTheme.fontFamily.sans],
+        mono: ["IBM Plex Mono", ...defaultTheme.fontFamily.mono],
+        display: ["Archivo Narrow", ...defaultTheme.fontFamily.sans],
+        boldonse: ["Boldonse", ...defaultTheme.fontFamily.sans],
       },
       colors: {
         accent: {

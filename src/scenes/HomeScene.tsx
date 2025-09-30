@@ -1,5 +1,6 @@
 "use client"
 import { useRouter } from "next/navigation"
+import Image from "next/image"
 import GlitchButton from "@/components/buttons/GlitchButton"
 
 export default function HomeScene() {
@@ -49,11 +50,14 @@ export default function HomeScene() {
       {/* Content */}
       <div className="text-center max-w-xl relative z-10">
         <div className="mb-4">
-          <img 
-            src="/images/tangletonwhite.png" 
-            alt="Tangleton" 
-            className="h-20 md:h-24 mx-auto rgb-split"
-          />
+          <div className="relative h-20 md:h-24 w-48 md:w-56 mx-auto">
+            <Image 
+              src="/images/tangletonwhite.png" 
+              alt="Tangleton" 
+              fill
+              className="object-contain rgb-split"
+            />
+          </div>
         </div>
         <p className="mt-4 text-white/80">Los Angeles based DJ / Designer</p>
         <div className="mt-8 flex items-center justify-center gap-4">

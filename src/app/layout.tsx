@@ -4,18 +4,12 @@ import "./globals.css"
 import VHSFilters from "./_filters/VHSFilters"
 import MainNav from "@/components/nav/MainNav"
 import AudioPlayer from "@/components/media/AudioPlayer"
+import RouterView from "./RouterView"
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" })
 const archivo = Archivo_Narrow({ subsets: ["latin"], variable: "--font-archivo" })
 const plex = IBM_Plex_Mono({ subsets: ["latin"], weight: ["400", "600"], variable: "--font-plex" })
 
-// Add Boldonse font
-const boldonse = {
-  className: "font-boldonse",
-  style: {
-    fontFamily: "Boldonse, sans-serif",
-  }
-}
 
 export const metadata: Metadata = {
   title: "DJ Name — Official Site",
@@ -23,11 +17,9 @@ export const metadata: Metadata = {
 }
 
 export default function RootLayout({ 
-  children, 
-  scene 
+  children
 }: { 
   children: React.ReactNode
-  scene: React.ReactNode
 }) {
   return (
     <html lang="en" className={`${inter.variable} ${archivo.variable} ${plex.variable}`}>
@@ -39,8 +31,9 @@ export default function RootLayout({
       <body className="body-crt">
         <VHSFilters />
         <MainNav />
-        {scene}
-        {children}
+        <RouterView>
+          {children}
+        </RouterView>
         <AudioPlayer />
       </body>
     </html>

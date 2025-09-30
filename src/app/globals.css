@@ -21,6 +21,19 @@ html, body, :root {
   background: #0a0a0a; 
 }
 
+/* Disable scrolling on desktop and tablet, allow on mobile */
+@media (min-width: 768px) {
+  html, body {
+    overflow: hidden;
+  }
+}
+
+@media (max-width: 767px) {
+  html, body {
+    overflow: auto;
+  }
+}
+
 .body-crt {
   background:
     var(--scan),

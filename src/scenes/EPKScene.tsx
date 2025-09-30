@@ -5,15 +5,18 @@ import CRTImage from "@/components/media/CRTImage"
 
 export default function EPKScene({ intercepted }: { intercepted?: boolean }) {
   return (
-    <section 
-      className="min-h-dvh w-dvw p-6 pt-24 space-y-8 relative"
-      style={{
-        backgroundImage: "url('/images/vhsbackground.jpeg')",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat"
-      }}
-    >
+    <div className="h-dvh w-dvw relative">
+      {/* Background */}
+      <div 
+        className="absolute inset-0"
+        style={{
+          backgroundImage: "url('/images/vhsbackground.jpeg')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat"
+        }}
+      />
+      
       {/* Dark overlay */}
       <div className="absolute inset-0 bg-black/60 z-0"></div>
       
@@ -27,9 +30,9 @@ export default function EPKScene({ intercepted }: { intercepted?: boolean }) {
       ></div>
       
       {/* Content */}
-      <div className="relative z-20">
-      {/* Header with Logo */}
-      <div className="flex justify-center mb-8">
+      <section className="relative z-20 h-full w-full p-6 pt-24 space-y-8 overflow-y-auto md:overflow-hidden">
+      {/* Header with Logo and Download Button */}
+      <div className="flex justify-between items-center mb-8">
         <div className="relative w-64 h-32">
           <Image 
             src="/images/tangletonwhite.png" 
@@ -38,6 +41,13 @@ export default function EPKScene({ intercepted }: { intercepted?: boolean }) {
             className="object-contain"
           />
         </div>
+        <a 
+          download 
+          href="/epk/one-sheet.pdf" 
+          className="relative inline-flex items-center justify-center px-6 py-3 font-semibold bg-black border border-fuchsia-500/60 text-white rounded-md transition-transform hover:translate-y-[-1px] active:translate-y-[0px] shadow-[0_0_0_1px_#0ff_inset] hover:shadow-[0_0_0_1px_#f0f_inset]"
+        >
+          <span className="relative rgb-split">Download One-Sheet PDF</span>
+        </a>
       </div>
 
       {/* Image Gallery */}
@@ -180,20 +190,8 @@ export default function EPKScene({ intercepted }: { intercepted?: boolean }) {
           </CRTCard>
         </div>
 
-        {/* Download One-Sheet */}
-        <CRTCard className="p-6 md:col-span-2 lg:col-span-3">
-          <div className="text-center">
-            <a 
-              download 
-              href="/epk/one-sheet.pdf" 
-              className="inline-block bg-accent-cyan/20 hover:bg-accent-cyan/30 border border-accent-cyan/50 px-6 py-3 rounded-lg text-accent-cyan transition-colors"
-            >
-              Download One-Sheet PDF
-            </a>
-          </div>
-        </CRTCard>
       </div>
-      </div>
-    </section>
+      </section>
+    </div>
   )
 }

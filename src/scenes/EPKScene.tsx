@@ -8,7 +8,7 @@ export default function EPKScene({ intercepted }: { intercepted?: boolean }) {
     <section 
       className="min-h-dvh w-dvw p-6 pt-24 space-y-8 relative"
       style={{
-        backgroundImage: "url('/images/background2.png')",
+        backgroundImage: "url('/images/vhsbackground.jpeg')",
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat"
@@ -49,9 +49,9 @@ export default function EPKScene({ intercepted }: { intercepted?: boolean }) {
       </div>
 
       {/* Content Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {/* Bio & Location Section */}
-        <CRTCard className="p-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-start">
+        {/* Column 1: Bio & Location */}
+        <CRTCard className="p-6 h-fit">
           <h3 className="text-3xl font-bold rgb-split mb-4">Bio</h3>
           <p className="text-white/80 leading-relaxed mb-6">
             LA-based DJ blending house, breaks, and glitchy VHS textures into immersive electronic experiences. 
@@ -70,10 +70,9 @@ export default function EPKScene({ intercepted }: { intercepted?: boolean }) {
           </div>
         </CRTCard>
 
-        {/* Right Column - Stacked Cards */}
-        <div className="space-y-6">
-          {/* Cities Played At */}
-          <CRTCard className="p-4">
+        {/* Column 2: Cities Played At + Mixes & Social Media */}
+        <div className="space-y-6 h-fit">
+          <CRTCard className="p-4 h-fit">
             <h3 className="text-2xl font-bold rgb-split mb-3">Cities Played At</h3>
             <div className="space-y-1 text-white/80 text-sm">
               <p>• Los Angeles, CA</p>
@@ -82,8 +81,7 @@ export default function EPKScene({ intercepted }: { intercepted?: boolean }) {
             </div>
           </CRTCard>
 
-          {/* Mixes & Social Media */}
-          <CRTCard className="p-4">
+          <CRTCard className="p-4 h-fit">
             <h3 className="text-2xl font-bold rgb-split mb-3">Mixes & Social Media</h3>
             <div className="grid grid-cols-2 gap-3">
               <a 
@@ -126,8 +124,16 @@ export default function EPKScene({ intercepted }: { intercepted?: boolean }) {
           </CRTCard>
         </div>
 
+        {/* Column 3: Genres */}
+        <CRTCard className="p-4 h-fit">
+          <h3 className="text-2xl font-bold rgb-split mb-3">Genres</h3>
+          <p className="text-white/80 text-sm leading-relaxed">
+            House, Trap, Rap, R&B, Jersey Club, Baile Funk, Afrobeats, Future Beats, Phonk, Hip Hop, Classics, and Throwbacks.
+          </p>
+        </CRTCard>
+
         {/* Download One-Sheet */}
-        <CRTCard className="p-6 md:col-span-2">
+        <CRTCard className="p-6 md:col-span-2 lg:col-span-3">
           <div className="text-center">
             <a 
               download 

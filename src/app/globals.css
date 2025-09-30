@@ -1,26 +1,264 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #0a0a0a;
+  --foreground: #ededed;
+  --grain: url('/textures/grain.png');
+  --scan: repeating-linear-gradient(#0000 0 2px, #000 2px 3px);
+  --crt-vignette: radial-gradient(120% 80% at 50% 50%, rgba(0,0,0,0) 40%, rgba(0,0,0,.9) 100%);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-inter);
+  --font-mono: var(--font-plex);
+  --font-display: var(--font-archivo);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+html, body, :root { 
+  height: 100%; 
+  background: #0a0a0a; 
+}
+
+.body-crt {
+  background:
+    var(--scan),
+    var(--crt-vignette),
+    var(--grain),
+    #0a0a0a;
+  background-blend-mode: soft-light, multiply, soft-light, normal;
+  image-rendering: pixelated;
+}
+
+/* ---------- SOUNDCLOUD EMBED ---------- */
+.soundcloud-embed iframe {
+  width: 100% !important;
+  height: 166px !important;
+  border: 1px solid rgba(0, 255, 255, 0.2) !important;
+  border-radius: 4px !important;
+}
+
+/* ---------- WAVEFORM ANIMATION ---------- */
+@keyframes waveform-pulse {
+  0%, 100% { 
+    opacity: 0.4; 
+    transform: scaleY(1);
+  }
+  50% { 
+    opacity: 0.8; 
+    transform: scaleY(1.2);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+.waveform-bar {
+  animation: waveform-pulse 1.5s ease-in-out infinite;
+}
+
+/* ---------- OVERLAYS ---------- */
+.scanlines:before {
+  content: "";
+  position: absolute; 
+  inset: 0; 
+  pointer-events: none;
+  background: var(--scan);
+  mix-blend-mode: soft-light; 
+  opacity: .35;
+}
+
+.vignette:after {
+  content: ""; 
+  position: absolute; 
+  inset: 0; 
+  pointer-events: none;
+  background: var(--crt-vignette);
+}
+
+.noise:after {
+  content: ""; 
+  position: absolute; 
+  inset: 0; 
+  pointer-events: none;
+  background: var(--grain); 
+  opacity: .15; 
+  mix-blend-mode: soft-light;
+  animation: noiseShift 1.2s steps(2,end) infinite;
+}
+
+@keyframes noiseShift {
+  0% { background-position: 0 0 }
+  50% { background-position: 2px -2px }
+  100% { background-position: 0 0 }
+}
+
+/* ---------- RGB SPLIT / CHROMA ---------- */
+.rgb-split { 
+  text-shadow: -1px 0 #0ff, 1px 0 #f0f; 
+}
+
+.rgb-split-strong { 
+  text-shadow: -2px 0 #0ff, 2px 0 #f0f; 
+}
+
+/* Hover chromatic smear for any element */
+.chromatic-hover {
+  position: relative;
+}
+
+.chromatic-hover:hover { 
+  filter: contrast(1.1) saturate(1.2); 
+}
+
+.chromatic-hover:hover .chromatic-layer {
+  transform: translateX(-1px);
+}
+
+.chromatic-hover:hover .chromatic-layer--b {
+  transform: translateX(1px);
+}
+
+.chromatic-layer, .chromatic-layer--b {
+  position: absolute; 
+  inset: 0; 
+  pointer-events: none; 
+  mix-blend-mode: screen; 
+  opacity: .45;
+}
+
+.chromatic-layer { 
+  filter: drop-shadow(0 0 0 #0ff); 
+}
+
+.chromatic-layer--b { 
+  filter: drop-shadow(0 0 0 #f0f); 
+}
+
+/* ---------- FLICKER / GHOSTING ---------- */
+@keyframes crtFlicker {
+  0%, 100% { opacity: 1 }
+  10% { opacity: .98 }
+  20% { opacity: 1 }
+  25% { opacity: .96 }
+  30% { opacity: 1 }
+  60% { opacity: .99 }
+  70% { opacity: 1 }
+  80% { opacity: .97 }
+  90% { opacity: 1 }
+}
+
+.flicker { 
+  animation: crtFlicker 2.2s linear infinite; 
+}
+
+.ghosting { 
+  text-shadow:
+    0 0 1px rgba(255,255,255,.3),
+    2px 0 0 rgba(0,255,255,.25),
+    -2px 0 0 rgba(255,0,255,.25);
+}
+
+/* ---------- VERTICAL ROLL / BAD TRACKING ---------- */
+@keyframes vhsRoll {
+  0% { background-position: 0 100% }
+  100% { background-position: 0 0 }
+}
+
+.vhs-roll:before {
+  content: ""; 
+  position: absolute; 
+  inset: 0; 
+  pointer-events: none;
+  background: linear-gradient(0deg, rgba(255,255,255,0) 40%, rgba(255,255,255,.08) 50%, rgba(255,255,255,0) 60%);
+  mix-blend-mode: screen; 
+  opacity: .6;
+  background-size: 100% 240%;
+  animation: vhsRoll 3.5s linear infinite;
+}
+
+@keyframes sliceGlitch {
+  0% { clip-path: inset(5% 0 60% 0); transform: translateX(0) }
+  20% { clip-path: inset(15% 0 50% 0); transform: translateX(-2px) }
+  40% { clip-path: inset(25% 0 40% 0); transform: translateX(2px) }
+  60% { clip-path: inset(10% 0 55% 0); transform: translateX(-1px) }
+  80% { clip-path: inset(20% 0 45% 0); transform: translateX(1px) }
+  100% { clip-path: inset(5% 0 60% 0); transform: translateX(0) }
+}
+
+.bad-tracking {
+  position: relative;
+}
+
+.bad-tracking:after {
+  content: ""; 
+  position: absolute; 
+  inset: 0; 
+  pointer-events: none;
+  background: inherit;
+  filter: hue-rotate(15deg) saturate(1.2);
+  mix-blend-mode: screen; 
+  opacity: .4;
+  animation: sliceGlitch 900ms steps(2,end) infinite;
+}
+
+/* ---------- COLOR BLEED / BLOOM ---------- */
+.color-bleed {
+  filter:
+    drop-shadow(0 0 1px rgba(0,255,255,.35))
+    drop-shadow(0 0 1px rgba(255,0,255,.35));
+}
+
+.bloom {
+  position: relative;
+}
+
+.bloom:after {
+  content: ""; 
+  position: absolute; 
+  inset: -2px; 
+  pointer-events: none;
+  filter: blur(6px) saturate(1.6) brightness(1.2);
+  background: inherit; 
+  opacity: .35; 
+  z-index: -1;
+}
+
+/* ---------- CRT CURVATURE ---------- */
+.crt-curved {
+  border-radius: 22px;
+  box-shadow:
+    inset 0 0 80px rgba(0,0,0,.7),
+    0 0 0 1px rgba(255,255,255,.04);
+}
+
+.crt-curved:before {
+  content: ""; 
+  position: absolute; 
+  inset: 0; 
+  pointer-events: none; 
+  border-radius: 22px;
+  background: radial-gradient(150% 100% at 50% 50%, rgba(255,255,255,.06) 0%, rgba(255,255,255,0) 60%);
+  mix-blend-mode: screen;
+}
+
+/* ---------- QUICK UTILS ---------- */
+.crt-border { 
+  border: 4px solid rgba(0,255,255,.25); 
+}
+
+.glitch-in { 
+  animation: glitch 120ms steps(2) 6; 
+}
+
+@keyframes glitch {
+  0%,100% { transform: none } 
+  20% { transform: translate(-1px,1px) }
+  40% { transform: translate(1px,-1px) } 
+  60% { transform: translate(-1px,-1px) }
+  80% { transform: translate(1px,1px) }
+}
+
+/* Accessible focus ring for dark UI */
+:focus-visible { 
+  outline: 2px solid #00FFFF; 
+  outline-offset: 3px; 
 }

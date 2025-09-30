@@ -1,5 +1,6 @@
 "use client"
 import { useEffect, useRef, useState } from "react"
+import { usePathname } from "next/navigation"
 import { soundcloudMixes, SoundCloudMix } from "@/config/soundcloud-mixes"
 
 
@@ -12,6 +13,7 @@ interface SoundCloudEmbedData {
 }
 
 export default function AudioPlayer() {
+  const pathname = usePathname()
   const [currentTrack, setCurrentTrack] = useState<SoundCloudMix | null>(null)
   const [currentIndex, setCurrentIndex] = useState(0)
   const [embedData, setEmbedData] = useState<SoundCloudEmbedData | null>(null)
@@ -27,6 +29,15 @@ export default function AudioPlayer() {
       setCurrentIndex(0)
     }
   }, [currentTrack])
+
+  // Auto-minimize when not on home page
+  useEffect(() => {
+    if (pathname !== '/') {
+      setIsMinimized(true)
+    } else {
+      setIsMinimized(false)
+    }
+  }, [pathname])
 
   // Fetch embed data for current track
   useEffect(() => {

@@ -1,0 +1,909 @@
+
+> dj-epk@0.1.0 dev
+> next dev
+
+   ▲ Next.js 15.5.4
+   - Local:        http://localhost:3000
+   - Network:      http://192.168.1.180:3000
+
+ ✓ Starting...
+ ✓ Ready in 1306ms
+ ✓ Compiled /api/generate-pdf in 447ms (301 modules)
+PDF generation started
+Type received: mobile
+Generating HTML content...
+Converting image: /images/tangletonwhite.png
+Public path: /Users/ryantang/djtangleton/dj-epk/public/images/tangletonwhite.png
+Image buffer size: 16405
+File extension: .png
+Processing as PNG
+Resizing image...
+Image converted successfully, size: 12000
+Converting image: /images/background2.png
+Public path: /Users/ryantang/djtangleton/dj-epk/public/images/background2.png
+Image buffer size: 1318411
+File extension: .png
+Processing as PNG
+Resizing image...
+Image converted successfully, size: 158031
+Converting image: /images/DJimages/DSC02254 Large.jpeg
+Public path: /Users/ryantang/djtangleton/dj-epk/public/images/DJimages/DSC02254 Large.jpeg
+Image buffer size: 452664
+File extension: .jpeg
+Processing as JPEG
+Resizing image...
+Image converted successfully, size: 65931
+Converting image: /images/DJimages/IMG_2511 Large.jpeg
+Public path: /Users/ryantang/djtangleton/dj-epk/public/images/DJimages/IMG_2511 Large.jpeg
+Image buffer size: 323063
+File extension: .jpeg
+Processing as JPEG
+Resizing image...
+Image converted successfully, size: 61890
+Converting image: /images/DJimages/rob.img_isoulationdayparty_06.04.2023_325 Large.jpeg
+Public path: /Users/ryantang/djtangleton/dj-epk/public/images/DJimages/rob.img_isoulationdayparty_06.04.2023_325 Large.jpeg
+Image buffer size: 247159
+File extension: .jpeg
+Processing as JPEG
+Resizing image...
+Image converted successfully, size: 45155
+Converting image: /images/DJimages/WID07468_Original Large.jpeg
+Public path: /Users/ryantang/djtangleton/dj-epk/public/images/DJimages/WID07468_Original Large.jpeg
+Image buffer size: 221274
+File extension: .jpeg
+Processing as JPEG
+Resizing image...
+Image converted successfully, size: 59742
+HTML content generated, length: 548897
+PDF generation error: Error [TimeoutError]: Navigation timeout of 30000 ms exceeded
+    at async POST (src/app/api/generate-pdf/route.ts:37:5)
+  35 |     
+  36 |     // Set content and wait for fonts and images to load
+> 37 |     await page.setContent(html, { waitUntil: 'networkidle0' })
+     |     ^
+  38 |     
+  39 |     // Wait for fonts to load
+  40 |     await page.evaluateHandle('document.fonts.ready')
+ POST /api/generate-pdf 500 in 32803ms
+ ✓ Compiled in 153ms (107 modules)
+PDF generation started
+Type received: mobile
+Generating HTML content...
+Converting image: /images/tangletonwhite.png
+Public path: /Users/ryantang/djtangleton/dj-epk/public/images/tangletonwhite.png
+Image buffer size: 16405
+File extension: .png
+Processing as PNG
+Resizing image...
+Image converted successfully, size: 12000
+Converting image: /images/background2.png
+Public path: /Users/ryantang/djtangleton/dj-epk/public/images/background2.png
+Image buffer size: 1318411
+File extension: .png
+Processing as PNG
+Resizing image...
+Image converted successfully, size: 158031
+Converting image: /images/DJimages/DSC02254 Large.jpeg
+Public path: /Users/ryantang/djtangleton/dj-epk/public/images/DJimages/DSC02254 Large.jpeg
+Image buffer size: 452664
+File extension: .jpeg
+Processing as JPEG
+Resizing image...
+Image converted successfully, size: 65931
+Converting image: /images/DJimages/IMG_2511 Large.jpeg
+Public path: /Users/ryantang/djtangleton/dj-epk/public/images/DJimages/IMG_2511 Large.jpeg
+Image buffer size: 323063
+File extension: .jpeg
+Processing as JPEG
+Resizing image...
+Image converted successfully, size: 61890
+Converting image: /images/DJimages/rob.img_isoulationdayparty_06.04.2023_325 Large.jpeg
+Public path: /Users/ryantang/djtangleton/dj-epk/public/images/DJimages/rob.img_isoulationdayparty_06.04.2023_325 Large.jpeg
+Image buffer size: 247159
+File extension: .jpeg
+Processing as JPEG
+Resizing image...
+Image converted successfully, size: 45155
+Converting image: /images/DJimages/WID07468_Original Large.jpeg
+Public path: /Users/ryantang/djtangleton/dj-epk/public/images/DJimages/WID07468_Original Large.jpeg
+Image buffer size: 221274
+File extension: .jpeg
+Processing as JPEG
+Resizing image...
+Image converted successfully, size: 59742
+HTML content generated, length: 548897
+PDF generation error: TypeError: page.waitForTimeout is not a function
+    at POST (src/app/api/generate-pdf/route.ts:43:16)
+  41 |     
+  42 |     // Wait a bit for images to load (base64 images should load immediately)
+> 43 |     await page.waitForTimeout(1000)
+     |                ^
+  44 |     
+  45 |     // Generate PDF
+  46 |     const pdf = await page.pdf({
+ POST /api/generate-pdf 500 in 1506ms
+ ✓ Compiled in 55ms (107 modules)
+PDF generation started
+Type received: mobile
+Generating HTML content...
+Converting image: /images/tangletonwhite.png
+Public path: /Users/ryantang/djtangleton/dj-epk/public/images/tangletonwhite.png
+Image buffer size: 16405
+File extension: .png
+Processing as PNG
+Resizing image...
+Image converted successfully, size: 12000
+Converting image: /images/background2.png
+Public path: /Users/ryantang/djtangleton/dj-epk/public/images/background2.png
+Image buffer size: 1318411
+File extension: .png
+Processing as PNG
+Resizing image...
+Image converted successfully, size: 158031
+Converting image: /images/DJimages/DSC02254 Large.jpeg
+Public path: /Users/ryantang/djtangleton/dj-epk/public/images/DJimages/DSC02254 Large.jpeg
+Image buffer size: 452664
+File extension: .jpeg
+Processing as JPEG
+Resizing image...
+Image converted successfully, size: 65931
+Converting image: /images/DJimages/IMG_2511 Large.jpeg
+Public path: /Users/ryantang/djtangleton/dj-epk/public/images/DJimages/IMG_2511 Large.jpeg
+Image buffer size: 323063
+File extension: .jpeg
+Processing as JPEG
+Resizing image...
+Image converted successfully, size: 61890
+Converting image: /images/DJimages/rob.img_isoulationdayparty_06.04.2023_325 Large.jpeg
+Public path: /Users/ryantang/djtangleton/dj-epk/public/images/DJimages/rob.img_isoulationdayparty_06.04.2023_325 Large.jpeg
+Image buffer size: 247159
+File extension: .jpeg
+Processing as JPEG
+Resizing image...
+Image converted successfully, size: 45155
+Converting image: /images/DJimages/WID07468_Original Large.jpeg
+Public path: /Users/ryantang/djtangleton/dj-epk/public/images/DJimages/WID07468_Original Large.jpeg
+Image buffer size: 221274
+File extension: .jpeg
+Processing as JPEG
+Resizing image...
+Image converted successfully, size: 59742
+HTML content generated, length: 548897
+ POST /api/generate-pdf 200 in 4194ms
+PDF generation started
+Type received: desktop
+Generating HTML content...
+Converting image: /images/tangletonwhite.png
+Public path: /Users/ryantang/djtangleton/dj-epk/public/images/tangletonwhite.png
+Image buffer size: 16405
+File extension: .png
+Processing as PNG
+Resizing image...
+Image converted successfully, size: 12000
+Converting image: /images/background2.png
+Public path: /Users/ryantang/djtangleton/dj-epk/public/images/background2.png
+Image buffer size: 1318411
+File extension: .png
+Processing as PNG
+Resizing image...
+Image converted successfully, size: 158031
+Converting image: /images/DJimages/DSC02254 Large.jpeg
+Public path: /Users/ryantang/djtangleton/dj-epk/public/images/DJimages/DSC02254 Large.jpeg
+Image buffer size: 452664
+File extension: .jpeg
+Processing as JPEG
+Resizing image...
+Image converted successfully, size: 65931
+Converting image: /images/DJimages/IMG_2511 Large.jpeg
+Public path: /Users/ryantang/djtangleton/dj-epk/public/images/DJimages/IMG_2511 Large.jpeg
+Image buffer size: 323063
+File extension: .jpeg
+Processing as JPEG
+Resizing image...
+Image converted successfully, size: 61890
+Converting image: /images/DJimages/rob.img_isoulationdayparty_06.04.2023_325 Large.jpeg
+Public path: /Users/ryantang/djtangleton/dj-epk/public/images/DJimages/rob.img_isoulationdayparty_06.04.2023_325 Large.jpeg
+Image buffer size: 247159
+File extension: .jpeg
+Processing as JPEG
+Resizing image...
+Image converted successfully, size: 45155
+Converting image: /images/DJimages/WID07468_Original Large.jpeg
+Public path: /Users/ryantang/djtangleton/dj-epk/public/images/DJimages/WID07468_Original Large.jpeg
+Image buffer size: 221274
+File extension: .jpeg
+Processing as JPEG
+Resizing image...
+Image converted successfully, size: 59742
+HTML content generated, length: 548831
+ POST /api/generate-pdf 200 in 3322ms
+ ✓ Compiled in 97ms (107 modules)
+PDF generation started
+Type received: mobile
+Generating HTML content...
+Converting image: /images/tangletonwhite.png
+Public path: /Users/ryantang/djtangleton/dj-epk/public/images/tangletonwhite.png
+Image buffer size: 16405
+File extension: .png
+Processing as PNG
+Resizing image...
+Image converted successfully, size: 12000
+Converting image: /images/background2.png
+Public path: /Users/ryantang/djtangleton/dj-epk/public/images/background2.png
+Image buffer size: 1318411
+File extension: .png
+Processing as PNG
+Resizing image...
+Image converted successfully, size: 158031
+Converting image: /images/DJimages/DSC02254 Large.jpeg
+Public path: /Users/ryantang/djtangleton/dj-epk/public/images/DJimages/DSC02254 Large.jpeg
+Image buffer size: 452664
+File extension: .jpeg
+Processing as JPEG
+Resizing image...
+Image converted successfully, size: 65931
+Converting image: /images/DJimages/IMG_2511 Large.jpeg
+Public path: /Users/ryantang/djtangleton/dj-epk/public/images/DJimages/IMG_2511 Large.jpeg
+Image buffer size: 323063
+File extension: .jpeg
+Processing as JPEG
+Resizing image...
+Image converted successfully, size: 61890
+Converting image: /images/DJimages/rob.img_isoulationdayparty_06.04.2023_325 Large.jpeg
+Public path: /Users/ryantang/djtangleton/dj-epk/public/images/DJimages/rob.img_isoulationdayparty_06.04.2023_325 Large.jpeg
+Image buffer size: 247159
+File extension: .jpeg
+Processing as JPEG
+Resizing image...
+Image converted successfully, size: 45155
+Converting image: /images/DJimages/WID07468_Original Large.jpeg
+Public path: /Users/ryantang/djtangleton/dj-epk/public/images/DJimages/WID07468_Original Large.jpeg
+Image buffer size: 221274
+File extension: .jpeg
+Processing as JPEG
+Resizing image...
+Image converted successfully, size: 59742
+HTML content generated, length: 548897
+ POST /api/generate-pdf 200 in 3572ms
+PDF generation started
+Type received: desktop
+Generating HTML content...
+Converting image: /images/tangletonwhite.png
+Public path: /Users/ryantang/djtangleton/dj-epk/public/images/tangletonwhite.png
+Image buffer size: 16405
+File extension: .png
+Processing as PNG
+Resizing image...
+Image converted successfully, size: 12000
+Converting image: /images/background2.png
+Public path: /Users/ryantang/djtangleton/dj-epk/public/images/background2.png
+Image buffer size: 1318411
+File extension: .png
+Processing as PNG
+Resizing image...
+Image converted successfully, size: 158031
+Converting image: /images/DJimages/DSC02254 Large.jpeg
+Public path: /Users/ryantang/djtangleton/dj-epk/public/images/DJimages/DSC02254 Large.jpeg
+Image buffer size: 452664
+File extension: .jpeg
+Processing as JPEG
+Resizing image...
+Image converted successfully, size: 65931
+Converting image: /images/DJimages/IMG_2511 Large.jpeg
+Public path: /Users/ryantang/djtangleton/dj-epk/public/images/DJimages/IMG_2511 Large.jpeg
+Image buffer size: 323063
+File extension: .jpeg
+Processing as JPEG
+Resizing image...
+Image converted successfully, size: 61890
+Converting image: /images/DJimages/rob.img_isoulationdayparty_06.04.2023_325 Large.jpeg
+Public path: /Users/ryantang/djtangleton/dj-epk/public/images/DJimages/rob.img_isoulationdayparty_06.04.2023_325 Large.jpeg
+Image buffer size: 247159
+File extension: .jpeg
+Processing as JPEG
+Resizing image...
+Image converted successfully, size: 45155
+Converting image: /images/DJimages/WID07468_Original Large.jpeg
+Public path: /Users/ryantang/djtangleton/dj-epk/public/images/DJimages/WID07468_Original Large.jpeg
+Image buffer size: 221274
+File extension: .jpeg
+Processing as JPEG
+Resizing image...
+Image converted successfully, size: 59742
+HTML content generated, length: 548831
+ POST /api/generate-pdf 200 in 3224ms
+ ○ Compiling /epk ...
+ ✓ Compiled /epk in 2.3s (1510 modules)
+ GET /epk 200 in 2691ms
+ ✓ Compiled /favicon.ico in 172ms (833 modules)
+ GET /favicon.ico 200 in 253ms
+ GET /favicon.ico 200 in 14ms
+ ✓ Compiled in 348ms (667 modules)
+ GET /epk 200 in 78ms
+ ✓ Compiled in 171ms (667 modules)
+ GET /epk 200 in 31ms
+ ✓ Compiled in 151ms (667 modules)
+ GET /epk 200 in 21ms
+ ✓ Compiled in 237ms (667 modules)
+ GET /epk 200 in 28ms
+ ✓ Compiled in 114ms (667 modules)
+ GET /epk 200 in 21ms
+ ✓ Compiled in 272ms (667 modules)
+ GET /epk 200 in 35ms
+ ✓ Compiled in 146ms (667 modules)
+ GET /epk 200 in 24ms
+ ✓ Compiled in 140ms (667 modules)
+ GET /epk 200 in 29ms
+ ✓ Compiled in 140ms (667 modules)
+ GET /epk 200 in 22ms
+ ✓ Compiled /api/generate-pdf in 219ms (839 modules)
+PDF generation started
+Type received: mobile
+ GET /epk 200 in 102ms
+Generating HTML content...
+Converting image: /images/tangletonwhite.png
+Public path: /Users/ryantang/djtangleton/dj-epk/public/images/tangletonwhite.png
+Image buffer size: 16405
+File extension: .png
+Processing as PNG
+Resizing image...
+Image converted successfully, size: 12000
+Converting image: /images/background2.png
+Public path: /Users/ryantang/djtangleton/dj-epk/public/images/background2.png
+Image buffer size: 1318411
+File extension: .png
+Processing as PNG
+Resizing image...
+Image converted successfully, size: 158031
+Converting image: /images/DJimages/DSC02254 Large.jpeg
+Public path: /Users/ryantang/djtangleton/dj-epk/public/images/DJimages/DSC02254 Large.jpeg
+Image buffer size: 452664
+File extension: .jpeg
+Processing as JPEG
+Resizing image...
+Image converted successfully, size: 65931
+Converting image: /images/DJimages/IMG_2511 Large.jpeg
+Public path: /Users/ryantang/djtangleton/dj-epk/public/images/DJimages/IMG_2511 Large.jpeg
+Image buffer size: 323063
+File extension: .jpeg
+Processing as JPEG
+Resizing image...
+Image converted successfully, size: 61890
+Converting image: /images/DJimages/rob.img_isoulationdayparty_06.04.2023_325 Large.jpeg
+Public path: /Users/ryantang/djtangleton/dj-epk/public/images/DJimages/rob.img_isoulationdayparty_06.04.2023_325 Large.jpeg
+Image buffer size: 247159
+File extension: .jpeg
+Processing as JPEG
+Resizing image...
+Image converted successfully, size: 45155
+Converting image: /images/DJimages/WID07468_Original Large.jpeg
+Public path: /Users/ryantang/djtangleton/dj-epk/public/images/DJimages/WID07468_Original Large.jpeg
+Image buffer size: 221274
+File extension: .jpeg
+Processing as JPEG
+Resizing image...
+Image converted successfully, size: 59742
+HTML content generated, length: 549000
+ POST /api/generate-pdf 200 in 4685ms
+ ✓ Compiled in 330ms (1506 modules)
+ GET /epk 200 in 201ms
+PDF generation started
+Type received: mobile
+Generating HTML content...
+Converting image: /images/tangletonwhite.png
+Public path: /Users/ryantang/djtangleton/dj-epk/public/images/tangletonwhite.png
+Image buffer size: 16405
+File extension: .png
+Processing as PNG
+Resizing image...
+Image converted successfully, size: 12000
+Converting image: /images/background2.png
+Public path: /Users/ryantang/djtangleton/dj-epk/public/images/background2.png
+Image buffer size: 1318411
+File extension: .png
+Processing as PNG
+Resizing image...
+Image converted successfully, size: 158031
+Converting image: /images/DJimages/DSC02254 Large.jpeg
+Public path: /Users/ryantang/djtangleton/dj-epk/public/images/DJimages/DSC02254 Large.jpeg
+Image buffer size: 452664
+File extension: .jpeg
+Processing as JPEG
+Resizing image...
+Image converted successfully, size: 65931
+Converting image: /images/DJimages/IMG_2511 Large.jpeg
+Public path: /Users/ryantang/djtangleton/dj-epk/public/images/DJimages/IMG_2511 Large.jpeg
+Image buffer size: 323063
+File extension: .jpeg
+Processing as JPEG
+Resizing image...
+Image converted successfully, size: 61890
+Converting image: /images/DJimages/rob.img_isoulationdayparty_06.04.2023_325 Large.jpeg
+Public path: /Users/ryantang/djtangleton/dj-epk/public/images/DJimages/rob.img_isoulationdayparty_06.04.2023_325 Large.jpeg
+Image buffer size: 247159
+File extension: .jpeg
+Processing as JPEG
+Resizing image...
+Image converted successfully, size: 45155
+Converting image: /images/DJimages/WID07468_Original Large.jpeg
+Public path: /Users/ryantang/djtangleton/dj-epk/public/images/DJimages/WID07468_Original Large.jpeg
+Image buffer size: 221274
+File extension: .jpeg
+Processing as JPEG
+Resizing image...
+Image converted successfully, size: 59742
+HTML content generated, length: 549000
+ POST /api/generate-pdf 200 in 4056ms
+ ✓ Compiled /_not-found in 265ms (1493 modules)
+ GET /_nuxt/builds/latest.json?1759275375530 404 in 479ms
+ ✓ Compiled in 390ms (1507 modules)
+ GET /epk 200 in 77ms
+ ✓ Compiled in 637ms (1486 modules)
+ GET /epk 200 in 131ms
+ ✓ Compiled /api/generate-pdf in 201ms (839 modules)
+PDF generation started
+Type received: mobile
+ GET /epk 200 in 67ms
+Generating HTML content...
+Converting image: /images/tangletonwhite.png
+Public path: /Users/ryantang/djtangleton/dj-epk/public/images/tangletonwhite.png
+Image buffer size: 16405
+File extension: .png
+Processing as PNG
+Resizing image...
+Image converted successfully, size: 12000
+Converting image: /images/background2.png
+Public path: /Users/ryantang/djtangleton/dj-epk/public/images/background2.png
+Image buffer size: 1318411
+File extension: .png
+Processing as PNG
+Resizing image...
+Image converted successfully, size: 158031
+Converting image: /images/DJimages/DSC02254 Large.jpeg
+Public path: /Users/ryantang/djtangleton/dj-epk/public/images/DJimages/DSC02254 Large.jpeg
+Image buffer size: 452664
+File extension: .jpeg
+Processing as JPEG
+Resizing image...
+Image converted successfully, size: 65931
+Converting image: /images/DJimages/IMG_2511 Large.jpeg
+Public path: /Users/ryantang/djtangleton/dj-epk/public/images/DJimages/IMG_2511 Large.jpeg
+Image buffer size: 323063
+File extension: .jpeg
+Processing as JPEG
+Resizing image...
+Image converted successfully, size: 61890
+Converting image: /images/DJimages/rob.img_isoulationdayparty_06.04.2023_325 Large.jpeg
+Public path: /Users/ryantang/djtangleton/dj-epk/public/images/DJimages/rob.img_isoulationdayparty_06.04.2023_325 Large.jpeg
+Image buffer size: 247159
+File extension: .jpeg
+Processing as JPEG
+Resizing image...
+Image converted successfully, size: 45155
+Converting image: /images/DJimages/WID07468_Original Large.jpeg
+Public path: /Users/ryantang/djtangleton/dj-epk/public/images/DJimages/WID07468_Original Large.jpeg
+Image buffer size: 221274
+File extension: .jpeg
+Processing as JPEG
+Resizing image...
+Image converted successfully, size: 59742
+HTML content generated, length: 549300
+ POST /api/generate-pdf 200 in 4500ms
+PDF generation started
+Type received: mobile
+Generating HTML content...
+Converting image: /images/tangletonwhite.png
+Public path: /Users/ryantang/djtangleton/dj-epk/public/images/tangletonwhite.png
+Image buffer size: 16405
+File extension: .png
+Processing as PNG
+Resizing image...
+Image converted successfully, size: 12000
+Converting image: /images/background2.png
+Public path: /Users/ryantang/djtangleton/dj-epk/public/images/background2.png
+Image buffer size: 1318411
+File extension: .png
+Processing as PNG
+Resizing image...
+Image converted successfully, size: 158031
+Converting image: /images/DJimages/DSC02254 Large.jpeg
+Public path: /Users/ryantang/djtangleton/dj-epk/public/images/DJimages/DSC02254 Large.jpeg
+Image buffer size: 452664
+File extension: .jpeg
+Processing as JPEG
+Resizing image...
+Image converted successfully, size: 65931
+Converting image: /images/DJimages/IMG_2511 Large.jpeg
+Public path: /Users/ryantang/djtangleton/dj-epk/public/images/DJimages/IMG_2511 Large.jpeg
+Image buffer size: 323063
+File extension: .jpeg
+Processing as JPEG
+Resizing image...
+Image converted successfully, size: 61890
+Converting image: /images/DJimages/rob.img_isoulationdayparty_06.04.2023_325 Large.jpeg
+Public path: /Users/ryantang/djtangleton/dj-epk/public/images/DJimages/rob.img_isoulationdayparty_06.04.2023_325 Large.jpeg
+Image buffer size: 247159
+File extension: .jpeg
+Processing as JPEG
+Resizing image...
+Image converted successfully, size: 45155
+Converting image: /images/DJimages/WID07468_Original Large.jpeg
+Public path: /Users/ryantang/djtangleton/dj-epk/public/images/DJimages/WID07468_Original Large.jpeg
+Image buffer size: 221274
+File extension: .jpeg
+Processing as JPEG
+Resizing image...
+Image converted successfully, size: 59742
+HTML content generated, length: 549300
+ ✓ Compiled in 1198ms (1506 modules)
+ GET /epk 200 in 175ms
+ POST /api/generate-pdf 200 in 4544ms
+ ✓ Compiled in 513ms (1506 modules)
+ GET /epk 200 in 59ms
+ ✓ Compiled in 193ms (1506 modules)
+ GET /epk 200 in 50ms
+ ✓ Compiled in 262ms (1506 modules)
+ GET /epk 200 in 42ms
+ ✓ Compiled in 162ms (1506 modules)
+ GET /epk 200 in 44ms
+ ✓ Compiled in 264ms (1506 modules)
+ GET /epk 200 in 41ms
+ ✓ Compiled in 172ms (1483 modules)
+ GET /epk 200 in 134ms
+ ✓ Compiled in 151ms (667 modules)
+ GET /epk 200 in 21ms
+ ✓ Compiled in 135ms (667 modules)
+ GET /epk 200 in 20ms
+ ✓ Compiled in 221ms (667 modules)
+ GET /epk 200 in 27ms
+ ✓ Compiled in 225ms (667 modules)
+ GET /epk 200 in 45ms
+ ✓ Compiled in 124ms (667 modules)
+ GET /epk 200 in 35ms
+ ✓ Compiled in 100ms (667 modules)
+ GET /epk 200 in 15ms
+ ✓ Compiled in 189ms (667 modules)
+ GET /epk 200 in 34ms
+ ✓ Compiled in 220ms (667 modules)
+ GET /epk 200 in 42ms
+ ✓ Compiled /api/generate-pdf in 211ms (839 modules)
+PDF generation started
+Type received: mobile
+ GET /epk 200 in 144ms
+Generating HTML content...
+Converting image: /images/tangletonwhite.png
+Public path: /Users/ryantang/djtangleton/dj-epk/public/images/tangletonwhite.png
+Image buffer size: 16405
+File extension: .png
+Processing as PNG
+Resizing image...
+Image converted successfully, size: 12000
+Converting image: /images/background2.png
+Public path: /Users/ryantang/djtangleton/dj-epk/public/images/background2.png
+Image buffer size: 1318411
+File extension: .png
+Processing as PNG
+Resizing image...
+Image converted successfully, size: 158031
+Converting image: /images/DJimages/DSC02254 Large.jpeg
+Public path: /Users/ryantang/djtangleton/dj-epk/public/images/DJimages/DSC02254 Large.jpeg
+Image buffer size: 452664
+File extension: .jpeg
+Processing as JPEG
+Resizing image...
+Image converted successfully, size: 65931
+Converting image: /images/DJimages/IMG_2511 Large.jpeg
+Public path: /Users/ryantang/djtangleton/dj-epk/public/images/DJimages/IMG_2511 Large.jpeg
+Image buffer size: 323063
+File extension: .jpeg
+Processing as JPEG
+Resizing image...
+Image converted successfully, size: 61890
+Converting image: /images/DJimages/rob.img_isoulationdayparty_06.04.2023_325 Large.jpeg
+Public path: /Users/ryantang/djtangleton/dj-epk/public/images/DJimages/rob.img_isoulationdayparty_06.04.2023_325 Large.jpeg
+Image buffer size: 247159
+File extension: .jpeg
+Processing as JPEG
+Resizing image...
+Image converted successfully, size: 45155
+Converting image: /images/DJimages/WID07468_Original Large.jpeg
+Public path: /Users/ryantang/djtangleton/dj-epk/public/images/DJimages/WID07468_Original Large.jpeg
+Image buffer size: 221274
+File extension: .jpeg
+Processing as JPEG
+Resizing image...
+Image converted successfully, size: 59742
+HTML content generated, length: 549308
+ POST /api/generate-pdf 200 in 4610ms
+ ✓ Compiled in 232ms (1506 modules)
+ GET /epk 200 in 72ms
+PDF generation started
+Type received: mobile
+PDF generation started
+Type received: mobile
+Generating HTML content...
+Converting image: /images/tangletonwhite.png
+Public path: /Users/ryantang/djtangleton/dj-epk/public/images/tangletonwhite.png
+Image buffer size: 16405
+File extension: .png
+Processing as PNG
+Resizing image...
+Image converted successfully, size: 12000
+Converting image: /images/background2.png
+Public path: /Users/ryantang/djtangleton/dj-epk/public/images/background2.png
+Image buffer size: 1318411
+File extension: .png
+Processing as PNG
+Resizing image...
+Generating HTML content...
+Converting image: /images/tangletonwhite.png
+Public path: /Users/ryantang/djtangleton/dj-epk/public/images/tangletonwhite.png
+Image buffer size: 16405
+File extension: .png
+Processing as PNG
+Resizing image...
+Image converted successfully, size: 12000
+Converting image: /images/background2.png
+Public path: /Users/ryantang/djtangleton/dj-epk/public/images/background2.png
+Image buffer size: 1318411
+File extension: .png
+Processing as PNG
+Resizing image...
+Image converted successfully, size: 158031
+Converting image: /images/DJimages/DSC02254 Large.jpeg
+Public path: /Users/ryantang/djtangleton/dj-epk/public/images/DJimages/DSC02254 Large.jpeg
+Image buffer size: 452664
+File extension: .jpeg
+Processing as JPEG
+Resizing image...
+Image converted successfully, size: 65931
+Converting image: /images/DJimages/IMG_2511 Large.jpeg
+Public path: /Users/ryantang/djtangleton/dj-epk/public/images/DJimages/IMG_2511 Large.jpeg
+Image buffer size: 323063
+File extension: .jpeg
+Processing as JPEG
+Resizing image...
+Image converted successfully, size: 61890
+Converting image: /images/DJimages/rob.img_isoulationdayparty_06.04.2023_325 Large.jpeg
+Public path: /Users/ryantang/djtangleton/dj-epk/public/images/DJimages/rob.img_isoulationdayparty_06.04.2023_325 Large.jpeg
+Image buffer size: 247159
+File extension: .jpeg
+Processing as JPEG
+Resizing image...
+Image converted successfully, size: 45155
+Converting image: /images/DJimages/WID07468_Original Large.jpeg
+Public path: /Users/ryantang/djtangleton/dj-epk/public/images/DJimages/WID07468_Original Large.jpeg
+Image buffer size: 221274
+File extension: .jpeg
+Processing as JPEG
+Resizing image...
+Image converted successfully, size: 59742
+HTML content generated, length: 549308
+Image converted successfully, size: 158031
+Converting image: /images/DJimages/DSC02254 Large.jpeg
+Public path: /Users/ryantang/djtangleton/dj-epk/public/images/DJimages/DSC02254 Large.jpeg
+Image buffer size: 452664
+File extension: .jpeg
+Processing as JPEG
+Resizing image...
+Image converted successfully, size: 65931
+Converting image: /images/DJimages/IMG_2511 Large.jpeg
+Public path: /Users/ryantang/djtangleton/dj-epk/public/images/DJimages/IMG_2511 Large.jpeg
+Image buffer size: 323063
+File extension: .jpeg
+Processing as JPEG
+Resizing image...
+Image converted successfully, size: 61890
+Converting image: /images/DJimages/rob.img_isoulationdayparty_06.04.2023_325 Large.jpeg
+Public path: /Users/ryantang/djtangleton/dj-epk/public/images/DJimages/rob.img_isoulationdayparty_06.04.2023_325 Large.jpeg
+Image buffer size: 247159
+File extension: .jpeg
+Processing as JPEG
+Resizing image...
+Image converted successfully, size: 45155
+Converting image: /images/DJimages/WID07468_Original Large.jpeg
+Public path: /Users/ryantang/djtangleton/dj-epk/public/images/DJimages/WID07468_Original Large.jpeg
+Image buffer size: 221274
+File extension: .jpeg
+Processing as JPEG
+Resizing image...
+Image converted successfully, size: 59742
+HTML content generated, length: 549308
+ POST /api/generate-pdf 200 in 4636ms
+ POST /api/generate-pdf 200 in 3975ms
+ ✓ Compiled in 412ms (1506 modules)
+ GET /epk 200 in 56ms
+PDF generation started
+Type received: mobile
+Generating HTML content...
+Converting image: /images/tangletonwhite.png
+Public path: /Users/ryantang/djtangleton/dj-epk/public/images/tangletonwhite.png
+Image buffer size: 16405
+File extension: .png
+Processing as PNG
+Resizing image...
+Image converted successfully, size: 12000
+Converting image: /images/background2.png
+Public path: /Users/ryantang/djtangleton/dj-epk/public/images/background2.png
+Image buffer size: 1318411
+File extension: .png
+Processing as PNG
+Resizing image...
+Image converted successfully, size: 158031
+Converting image: /images/DJimages/DSC02254 Large.jpeg
+Public path: /Users/ryantang/djtangleton/dj-epk/public/images/DJimages/DSC02254 Large.jpeg
+Image buffer size: 452664
+File extension: .jpeg
+Processing as JPEG
+Resizing image...
+Image converted successfully, size: 65931
+Converting image: /images/DJimages/IMG_2511 Large.jpeg
+Public path: /Users/ryantang/djtangleton/dj-epk/public/images/DJimages/IMG_2511 Large.jpeg
+Image buffer size: 323063
+File extension: .jpeg
+Processing as JPEG
+Resizing image...
+Image converted successfully, size: 61890
+Converting image: /images/DJimages/rob.img_isoulationdayparty_06.04.2023_325 Large.jpeg
+Public path: /Users/ryantang/djtangleton/dj-epk/public/images/DJimages/rob.img_isoulationdayparty_06.04.2023_325 Large.jpeg
+Image buffer size: 247159
+File extension: .jpeg
+Processing as JPEG
+Resizing image...
+Image converted successfully, size: 45155
+Converting image: /images/DJimages/WID07468_Original Large.jpeg
+Public path: /Users/ryantang/djtangleton/dj-epk/public/images/DJimages/WID07468_Original Large.jpeg
+Image buffer size: 221274
+File extension: .jpeg
+Processing as JPEG
+Resizing image...
+Image converted successfully, size: 59742
+HTML content generated, length: 549386
+ POST /api/generate-pdf 200 in 4033ms
+ ✓ Compiled in 228ms (1506 modules)
+ GET /epk 200 in 49ms
+PDF generation started
+Type received: mobile
+Generating HTML content...
+Converting image: /images/tangletonwhite.png
+Public path: /Users/ryantang/djtangleton/dj-epk/public/images/tangletonwhite.png
+Image buffer size: 16405
+File extension: .png
+Processing as PNG
+Resizing image...
+Image converted successfully, size: 12000
+Converting image: /images/background2.png
+Public path: /Users/ryantang/djtangleton/dj-epk/public/images/background2.png
+Image buffer size: 1318411
+File extension: .png
+Processing as PNG
+Resizing image...
+Image converted successfully, size: 158031
+Converting image: /images/DJimages/DSC02254 Large.jpeg
+Public path: /Users/ryantang/djtangleton/dj-epk/public/images/DJimages/DSC02254 Large.jpeg
+Image buffer size: 452664
+File extension: .jpeg
+Processing as JPEG
+Resizing image...
+Image converted successfully, size: 65931
+Converting image: /images/DJimages/IMG_2511 Large.jpeg
+Public path: /Users/ryantang/djtangleton/dj-epk/public/images/DJimages/IMG_2511 Large.jpeg
+Image buffer size: 323063
+File extension: .jpeg
+Processing as JPEG
+Resizing image...
+Image converted successfully, size: 61890
+Converting image: /images/DJimages/rob.img_isoulationdayparty_06.04.2023_325 Large.jpeg
+Public path: /Users/ryantang/djtangleton/dj-epk/public/images/DJimages/rob.img_isoulationdayparty_06.04.2023_325 Large.jpeg
+Image buffer size: 247159
+File extension: .jpeg
+Processing as JPEG
+Resizing image...
+Image converted successfully, size: 45155
+Converting image: /images/DJimages/WID07468_Original Large.jpeg
+Public path: /Users/ryantang/djtangleton/dj-epk/public/images/DJimages/WID07468_Original Large.jpeg
+Image buffer size: 221274
+File extension: .jpeg
+Processing as JPEG
+Resizing image...
+Image converted successfully, size: 59742
+HTML content generated, length: 549386
+ POST /api/generate-pdf 200 in 3761ms
+ ✓ Compiled in 467ms (1506 modules)
+ GET /epk 200 in 93ms
+PDF generation started
+Type received: mobile
+Generating HTML content...
+Converting image: /images/tangletonwhite.png
+Public path: /Users/ryantang/djtangleton/dj-epk/public/images/tangletonwhite.png
+Image buffer size: 16405
+File extension: .png
+Processing as PNG
+Resizing image...
+Image converted successfully, size: 12000
+Converting image: /images/background2.png
+Public path: /Users/ryantang/djtangleton/dj-epk/public/images/background2.png
+Image buffer size: 1318411
+File extension: .png
+Processing as PNG
+Resizing image...
+Image converted successfully, size: 158031
+Converting image: /images/DJimages/DSC02254 Large.jpeg
+Public path: /Users/ryantang/djtangleton/dj-epk/public/images/DJimages/DSC02254 Large.jpeg
+Image buffer size: 452664
+File extension: .jpeg
+Processing as JPEG
+Resizing image...
+Image converted successfully, size: 65931
+Converting image: /images/DJimages/IMG_2511 Large.jpeg
+Public path: /Users/ryantang/djtangleton/dj-epk/public/images/DJimages/IMG_2511 Large.jpeg
+Image buffer size: 323063
+File extension: .jpeg
+Processing as JPEG
+Resizing image...
+Image converted successfully, size: 61890
+Converting image: /images/DJimages/rob.img_isoulationdayparty_06.04.2023_325 Large.jpeg
+Public path: /Users/ryantang/djtangleton/dj-epk/public/images/DJimages/rob.img_isoulationdayparty_06.04.2023_325 Large.jpeg
+Image buffer size: 247159
+File extension: .jpeg
+Processing as JPEG
+Resizing image...
+Image converted successfully, size: 45155
+Converting image: /images/DJimages/WID07468_Original Large.jpeg
+Public path: /Users/ryantang/djtangleton/dj-epk/public/images/DJimages/WID07468_Original Large.jpeg
+Image buffer size: 221274
+File extension: .jpeg
+Processing as JPEG
+Resizing image...
+Image converted successfully, size: 59742
+HTML content generated, length: 549400
+ POST /api/generate-pdf 200 in 4050ms
+ ✓ Compiled in 264ms (1506 modules)
+ GET /epk 200 in 74ms
+PDF generation started
+Type received: mobile
+Generating HTML content...
+Converting image: /images/tangletonwhite.png
+Public path: /Users/ryantang/djtangleton/dj-epk/public/images/tangletonwhite.png
+Image buffer size: 16405
+File extension: .png
+Processing as PNG
+Resizing image...
+Image converted successfully, size: 12000
+Converting image: /images/background2.png
+Public path: /Users/ryantang/djtangleton/dj-epk/public/images/background2.png
+Image buffer size: 1318411
+File extension: .png
+Processing as PNG
+Resizing image...
+Image converted successfully, size: 158031
+Converting image: /images/DJimages/DSC02254 Large.jpeg
+Public path: /Users/ryantang/djtangleton/dj-epk/public/images/DJimages/DSC02254 Large.jpeg
+Image buffer size: 452664
+File extension: .jpeg
+Processing as JPEG
+Resizing image...
+Image converted successfully, size: 65931
+Converting image: /images/DJimages/IMG_2511 Large.jpeg
+Public path: /Users/ryantang/djtangleton/dj-epk/public/images/DJimages/IMG_2511 Large.jpeg
+Image buffer size: 323063
+File extension: .jpeg
+Processing as JPEG
+Resizing image...
+Image converted successfully, size: 61890
+Converting image: /images/DJimages/rob.img_isoulationdayparty_06.04.2023_325 Large.jpeg
+Public path: /Users/ryantang/djtangleton/dj-epk/public/images/DJimages/rob.img_isoulationdayparty_06.04.2023_325 Large.jpeg
+Image buffer size: 247159
+File extension: .jpeg
+Processing as JPEG
+Resizing image...
+Image converted successfully, size: 45155
+Converting image: /images/DJimages/WID07468_Original Large.jpeg
+Public path: /Users/ryantang/djtangleton/dj-epk/public/images/DJimages/WID07468_Original Large.jpeg
+Image buffer size: 221274
+File extension: .jpeg
+Processing as JPEG
+Resizing image...
+Image converted successfully, size: 59742
+HTML content generated, length: 549400
+ POST /api/generate-pdf 200 in 3640ms

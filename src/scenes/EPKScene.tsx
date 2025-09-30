@@ -4,6 +4,34 @@ import CRTCard from "@/components/cards/CRTCard"
 import CRTImage from "@/components/media/CRTImage"
 
 export default function EPKScene({ intercepted }: { intercepted?: boolean }) {
+  const generatePDF = async (type: 'desktop' | 'mobile') => {
+    try {
+      const response = await fetch('/api/generate-pdf', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ type }),
+      })
+
+      if (!response.ok) {
+        throw new Error('Failed to generate PDF')
+      }
+
+      const blob = await response.blob()
+      const url = window.URL.createObjectURL(blob)
+      const a = document.createElement('a')
+      a.href = url
+      a.download = `tangleton-epk-${type}.pdf`
+      document.body.appendChild(a)
+      a.click()
+      window.URL.revokeObjectURL(url)
+      document.body.removeChild(a)
+    } catch (error) {
+      console.error('Error generating PDF:', error)
+      alert('Failed to generate PDF. Please try again.')
+    }
+  }
   return (
     <div className="h-dvh w-dvw relative">
       {/* Background */}
@@ -42,20 +70,12 @@ export default function EPKScene({ intercepted }: { intercepted?: boolean }) {
           />
         </div>
         <div className="flex gap-3">
-          <a 
-            download 
-            href="/epk/one-sheet.pdf" 
-            className="relative inline-flex items-center justify-center px-4 py-2 font-semibold bg-black border border-fuchsia-500/60 text-white rounded-md transition-transform hover:translate-y-[-1px] active:translate-y-[0px] shadow-[0_0_0_1px_#0ff_inset] hover:shadow-[0_0_0_1px_#f0f_inset] text-sm"
-          >
-            <span className="relative rgb-split">Download PDF</span>
-          </a>
-          <a 
-            download 
-            href="/epk/one-sheet-mobile.pdf" 
+          <button 
+            onClick={() => generatePDF('mobile')}
             className="relative inline-flex items-center justify-center px-4 py-2 font-semibold bg-black border border-fuchsia-500/60 text-white rounded-md transition-transform hover:translate-y-[-1px] active:translate-y-[0px] shadow-[0_0_0_1px_#0ff_inset] hover:shadow-[0_0_0_1px_#f0f_inset] text-sm"
           >
             <span className="relative rgb-split">Download Mobile PDF</span>
-          </a>
+          </button>
         </div>
       </div>
 

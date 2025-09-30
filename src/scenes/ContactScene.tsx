@@ -18,7 +18,7 @@ export default function ContactScene() {
   return (
     <section className="h-dvh w-dvw grid place-items-center p-6">
       <form onSubmit={handleSubmit(onSubmit)} className="w-full max-w-md space-y-4">
-        <h2 className="text-4xl font-display rgb-split">Booking</h2>
+        <h2 className="text-4xl font-boldonse rgb-split">Booking</h2>
         <input 
           placeholder="Name" 
           {...register("name")} 

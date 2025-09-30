@@ -10,6 +10,7 @@ export default {
         sans: ["Inter", ...fontFamily.sans],
         mono: ["IBM Plex Mono", ...fontFamily.mono],
         display: ["Archivo Narrow", ...fontFamily.sans],
+        boldonse: ["Boldonse", ...fontFamily.sans],
       },
       colors: {
         accent: {

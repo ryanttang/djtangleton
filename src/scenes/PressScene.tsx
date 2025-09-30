@@ -40,7 +40,7 @@ export default function MixesScene({ intercepted }: { intercepted?: boolean }) {
   return (
     <section className="h-dvh w-dvw flex flex-col overflow-y-auto">
       <header className="p-6">
-        <h2 className="text-4xl font-display rgb-split">Mixes</h2>
+        <h2 className="text-4xl font-boldonse rgb-split">Mixes</h2>
         <p className="text-white/60 mt-2">Latest DJ mixes and live sessions</p>
       </header>
       <div className="flex-1 px-6 pb-6">
@@ -70,7 +70,7 @@ export default function MixesScene({ intercepted }: { intercepted?: boolean }) {
         
         <div className="mt-8">
           <CRTCard className="p-6 text-center">
-            <h3 className="text-xl font-display rgb-split mb-2">More Mixes</h3>
+            <h3 className="text-xl font-boldonse rgb-split mb-2">More Mixes</h3>
             <p className="text-white/70 mb-4">Check out my full catalog on SoundCloud and Mixcloud</p>
             <div className="flex gap-4 justify-center">
               <button className="px-6 py-2 bg-fuchsia-500/20 border border-fuchsia-500/50 text-fuchsia-400 rounded hover:bg-fuchsia-500/30 transition-colors">

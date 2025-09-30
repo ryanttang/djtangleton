@@ -17,6 +17,7 @@ export default function AudioPlayer() {
   const [embedData, setEmbedData] = useState<SoundCloudEmbedData | null>(null)
   const [loading, setLoading] = useState(false)
   const [isMuted, setIsMuted] = useState(false)
+  const [isMinimized, setIsMinimized] = useState(false)
   const iframeRef = useRef<HTMLIFrameElement>(null)
 
   // Initialize with first track
@@ -78,6 +79,10 @@ export default function AudioPlayer() {
     // This is a visual state indicator for now
   }
 
+  const toggleMinimize = () => {
+    setIsMinimized(!isMinimized)
+  }
+
   // Keyboard shortcuts
   useEffect(() => {
     const handleKeyPress = (e: KeyboardEvent) => {
@@ -98,6 +103,10 @@ export default function AudioPlayer() {
           e.preventDefault()
           toggleMute()
           break
+        case 'KeyH':
+          e.preventDefault()
+          toggleMinimize()
+          break
       }
     }
 
@@ -110,8 +119,61 @@ export default function AudioPlayer() {
     return null
   }
 
+  // Minimized view
+  if (isMinimized) {
+    return (
+      <div 
+        className="fixed bottom-3 right-3 z-40 bg-black/60 border border-cyan-500/30 rounded-md backdrop-blur cursor-pointer hover:bg-black/70 hover:border-cyan-500/50 transition-all duration-200"
+        onClick={toggleMinimize}
+        title="Click to expand player (H)"
+      >
+        <div className="flex items-center gap-2 p-2">
+          {/* Mini cover art */}
+          <div className="w-8 h-8 bg-black/50 border border-cyan-500/30 rounded overflow-hidden">
+            {embedData?.thumbnail_url ? (
+              <img 
+                src={embedData.thumbnail_url} 
+                alt={currentTrack.title}
+                className="w-full h-full object-cover"
+              />
+            ) : (
+              <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-cyan-500/20 to-fuchsia-500/20">
+                <span className="text-cyan-500 text-xs font-mono">MIX</span>
+              </div>
+            )}
+          </div>
+          
+          {/* Track title */}
+          <div className="text-xs text-white/80 truncate max-w-32">
+            {embedData?.title || currentTrack.title}
+          </div>
+          
+          {/* Expand icon indicator */}
+          <div className="p-1 text-white/50">
+            <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+    )
+  }
+
   return (
     <div className="fixed bottom-3 left-1/2 transform -translate-x-1/2 z-40 bg-black/60 border border-cyan-500/30 rounded-md backdrop-blur w-[800px] max-w-[calc(100vw-24px)]">
+      {/* Header with minimize button */}
+      <div 
+        className="flex justify-end p-2 border-b border-cyan-500/20 cursor-pointer hover:bg-black/20 transition-all duration-200"
+        onClick={toggleMinimize}
+        title="Click to minimize to corner (H)"
+      >
+        <div className="p-1 bg-black/30 border border-cyan-500/30 rounded hover:bg-cyan-500/20 hover:border-cyan-500/50 text-white/70 hover:text-white transition-all duration-200">
+          <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M19 13H5v-2h14v2z"/>
+          </svg>
+        </div>
+      </div>
+      
       <div className="flex gap-3 p-3">
         {/* Left Side - Cover Art & Controls */}
         <div className="flex-shrink-0">

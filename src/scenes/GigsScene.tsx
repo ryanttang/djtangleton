@@ -7,7 +7,7 @@ export default function GigsScene() {
   
   return (
     <section className="h-dvh w-dvw p-6">
-      <h2 className="text-4xl font-display rgb-split mb-4">Upcoming Shows</h2>
+      <h2 className="text-4xl font-boldonse rgb-split mb-4">Upcoming Shows</h2>
       <ul className="space-y-3">
         {gigs.map((g, i) => (
           <li key={i} className="flex items-center justify-between border-b border-white/10 py-3">

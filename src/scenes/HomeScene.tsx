@@ -1,7 +1,10 @@
 "use client"
+import { useRouter } from "next/navigation"
 import GlitchButton from "@/components/buttons/GlitchButton"
 
 export default function HomeScene() {
+  const router = useRouter()
+  
   return (
     <section className="h-dvh w-dvw grid place-items-center relative overflow-hidden">
       {/* YouTube Background Video */}
@@ -54,8 +57,8 @@ export default function HomeScene() {
         </div>
         <p className="mt-4 text-white/80">Los Angeles based DJ / Designer</p>
         <div className="mt-8 flex items-center justify-center gap-4">
-          <GlitchButton onClick={() => location.assign('/epk')}>View EPK</GlitchButton>
-          <GlitchButton onClick={() => location.assign('/gigs')}>Gigs</GlitchButton>
+          <GlitchButton onClick={() => router.push('/epk')}>View EPK</GlitchButton>
+          <GlitchButton onClick={() => router.push('/gigs')}>Gigs</GlitchButton>
         </div>
       </div>
     </section>

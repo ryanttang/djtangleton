@@ -1,7 +1,7 @@
-import MixesScene from "@/scenes/MixesScene"
+import PressScene from "@/scenes/PressScene"
 
 export const revalidate = 60
 
-export default function MixesCanonical() {
-  return <MixesScene />
+export default function PressCanonical() {
+  return <PressScene />
 }

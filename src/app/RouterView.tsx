@@ -1,9 +1,9 @@
 "use client"
-import { useSelectedLayoutSegment } from "next/navigation"
+import { usePathname } from "next/navigation"
 import { AnimatePresence, motion } from "framer-motion"
 
 export default function RouterView({ children }: { children: React.ReactNode }) {
-  const segment = useSelectedLayoutSegment() // 'press'|'gigs'|'contact'|'epk'|null
+  const pathname = usePathname()
   const prefersReduced = typeof window !== 'undefined' &&
     window.matchMedia('(prefers-reduced-motion: reduce)').matches
 
@@ -12,7 +12,7 @@ export default function RouterView({ children }: { children: React.ReactNode }) 
   return (
     <AnimatePresence mode="wait">
       <motion.div
-        key={segment ?? "home"}
+        key={pathname}
         initial={{ opacity: 0, filter: "url(#vhs-displace)" }}
         animate={{ opacity: 1, filter: "none", transition: { duration: 0.45 } }}
         exit={{ opacity: 0, y: 8, transition: { duration: 0.25 } }}

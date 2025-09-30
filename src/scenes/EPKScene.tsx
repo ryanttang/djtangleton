@@ -31,7 +31,7 @@ export default function EPKScene({ intercepted }: { intercepted?: boolean }) {
       
       {/* Content */}
       <section className="relative z-20 h-full w-full p-6 pt-24 space-y-8 overflow-y-auto md:overflow-hidden">
-      {/* Header with Logo and Download Button */}
+      {/* Header with Logo and Download Buttons */}
       <div className="flex justify-between items-center mb-8">
         <div className="relative w-64 h-32">
           <Image 
@@ -41,13 +41,22 @@ export default function EPKScene({ intercepted }: { intercepted?: boolean }) {
             className="object-contain"
           />
         </div>
-        <a 
-          download 
-          href="/epk/one-sheet.pdf" 
-          className="relative inline-flex items-center justify-center px-6 py-3 font-semibold bg-black border border-fuchsia-500/60 text-white rounded-md transition-transform hover:translate-y-[-1px] active:translate-y-[0px] shadow-[0_0_0_1px_#0ff_inset] hover:shadow-[0_0_0_1px_#f0f_inset]"
-        >
-          <span className="relative rgb-split">Download One-Sheet PDF</span>
-        </a>
+        <div className="flex gap-3">
+          <a 
+            download 
+            href="/epk/one-sheet.pdf" 
+            className="relative inline-flex items-center justify-center px-4 py-2 font-semibold bg-black border border-fuchsia-500/60 text-white rounded-md transition-transform hover:translate-y-[-1px] active:translate-y-[0px] shadow-[0_0_0_1px_#0ff_inset] hover:shadow-[0_0_0_1px_#f0f_inset] text-sm"
+          >
+            <span className="relative rgb-split">Download PDF</span>
+          </a>
+          <a 
+            download 
+            href="/epk/one-sheet-mobile.pdf" 
+            className="relative inline-flex items-center justify-center px-4 py-2 font-semibold bg-black border border-fuchsia-500/60 text-white rounded-md transition-transform hover:translate-y-[-1px] active:translate-y-[0px] shadow-[0_0_0_1px_#0ff_inset] hover:shadow-[0_0_0_1px_#f0f_inset] text-sm"
+          >
+            <span className="relative rgb-split">Download Mobile PDF</span>
+          </a>
+        </div>
       </div>
 
       {/* Image Gallery */}

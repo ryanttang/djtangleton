@@ -171,7 +171,7 @@ export default function AudioPlayer() {
   }
 
   return (
-    <div className="fixed bottom-3 left-1/2 transform -translate-x-1/2 z-40 bg-black/60 border border-cyan-500/30 rounded-md backdrop-blur w-[800px] max-w-[calc(100vw-24px)]">
+    <div className="fixed bottom-3 left-1/2 transform -translate-x-1/2 z-40 bg-black/60 border border-cyan-500/30 rounded-md backdrop-blur w-[800px] max-w-[calc(100vw-24px)] max-h-[calc(100vh-6rem)] sm:max-h-none">
       {/* Header with minimize button */}
       <div 
         className="flex justify-end p-2 border-b border-cyan-500/20 cursor-pointer hover:bg-black/20 transition-all duration-200"
@@ -194,7 +194,7 @@ export default function AudioPlayer() {
               href={currentTrack.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-24 h-24 bg-black/50 border border-cyan-500/30 rounded overflow-hidden hover:border-cyan-500/60 hover:scale-105 transition-all duration-200 cursor-pointer group"
+              className="w-16 h-16 sm:w-24 sm:h-24 bg-black/50 border border-cyan-500/30 rounded overflow-hidden hover:border-cyan-500/60 hover:scale-105 transition-all duration-200 cursor-pointer group"
               title="Listen on SoundCloud"
             >
               {loading ? (
@@ -260,7 +260,7 @@ export default function AudioPlayer() {
               {embedData?.title || currentTrack.title}
             </h4>
             {/* Waveform Visualization */}
-            <div className="h-6 flex items-center gap-0.5 w-full">
+            <div className="h-4 sm:h-6 flex items-center gap-0.5 w-full">
               {Array.from({ length: 40 }, (_, i) => (
                 <div
                   key={i}
@@ -284,7 +284,7 @@ export default function AudioPlayer() {
             </div>
 
             {/* Playlist */}
-            <div className="h-32 overflow-y-auto scrollbar-thin scrollbar-thumb-cyan-500/30 scrollbar-track-transparent hover:scrollbar-thumb-cyan-500/50">
+            <div className="h-16 sm:h-32 overflow-y-auto scrollbar-thin scrollbar-thumb-cyan-500/30 scrollbar-track-transparent hover:scrollbar-thumb-cyan-500/50">
               <div className="space-y-0.5 pr-2">
                 {soundcloudMixes.map((track, index) => (
                   <button
@@ -309,20 +309,20 @@ export default function AudioPlayer() {
       {/* SoundCloud Embed */}
       {loading ? (
         <div className="px-3 pb-3">
-          <div className="h-20 bg-black/30 border border-cyan-500/20 rounded flex items-center justify-center">
+          <div className="h-16 sm:h-20 bg-black/30 border border-cyan-500/20 rounded flex items-center justify-center">
             <div className="text-cyan-500 text-xs font-mono">Loading...</div>
           </div>
         </div>
       ) : embedData ? (
         <div className="px-3 pb-3">
           <div 
-            className="soundcloud-embed"
+            className="soundcloud-embed max-h-16 sm:max-h-20 overflow-hidden"
             dangerouslySetInnerHTML={{ __html: embedData.html }}
           />
         </div>
       ) : (
         <div className="px-3 pb-3">
-          <div className="h-20 bg-black/30 border border-cyan-500/20 rounded flex items-center justify-center">
+          <div className="h-16 sm:h-20 bg-black/30 border border-cyan-500/20 rounded flex items-center justify-center">
             <a 
               href={currentTrack.url}
               target="_blank"

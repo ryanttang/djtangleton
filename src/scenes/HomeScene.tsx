@@ -33,7 +33,7 @@ export default function HomeScene() {
       </div>
       
       {/* YouTube Link Button */}
-      <div className="absolute top-16 left-1/2 -translate-x-1/2 md:left-auto md:right-4 md:translate-x-0 z-20">
+      <div className="absolute top-24 left-1/2 -translate-x-1/2 md:left-auto md:right-4 md:translate-x-0 z-20">
         <a
           href="https://youtube.com/watch?v=08Znc62_ZHA"
           target="_blank"

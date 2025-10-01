@@ -3,7 +3,7 @@ import CRTCard from "@/components/cards/CRTCard"
 import SoundCloudMix from "@/components/media/SoundCloudMix"
 import { quitplayingMixes, vibesRnBounceMixes, houseAndBounceMixes } from "@/config/soundcloud-mixes"
 
-export default function MixesScene({ intercepted }: { intercepted?: boolean }) {
+export default function MixesScene({ intercepted: _intercepted }: { intercepted?: boolean }) {
   
   return (
     <section className="h-dvh w-dvw flex flex-col overflow-y-auto pt-24">

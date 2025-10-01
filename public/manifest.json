@@ -1,0 +1,43 @@
+{
+  "name": "Tangleton - Vietnamese American LA-based DJ",
+  "short_name": "Tangleton",
+  "description": "Vietnamese American LA-based DJ specializing in curating the waviest blends from the sounds that makes you groove and bounce",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#ff00ff",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "en-US",
+  "categories": ["music", "entertainment", "lifestyle"],
+  "icons": [
+    {
+      "src": "/images/tangletonwhite.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/images/tangletonwhite.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/images/DJimages/DSC02254 Large.jpeg",
+      "sizes": "1280x720",
+      "type": "image/jpeg",
+      "form_factor": "wide",
+      "label": "Tangleton DJ Performance"
+    }
+  ],
+  "related_applications": [
+    {
+      "platform": "webapp",
+      "url": "https://tangleton.com/manifest.json"
+    }
+  ],
+  "prefer_related_applications": false
+}

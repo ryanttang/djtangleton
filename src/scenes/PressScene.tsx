@@ -2,7 +2,7 @@
 import CRTCard from "@/components/cards/CRTCard"
 import CRTImage from "@/components/media/CRTImage"
 
-export default function PressScene({ intercepted }: { intercepted?: boolean }) {
+export default function PressScene({ intercepted: _intercepted }: { intercepted?: boolean }) {
   return (
     <section className="h-dvh w-dvw grid grid-cols-1 md:grid-cols-2 gap-6 p-6">
       <CRTCard className="p-6">

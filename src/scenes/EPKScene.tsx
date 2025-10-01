@@ -3,7 +3,7 @@ import Image from "next/image"
 import CRTCard from "@/components/cards/CRTCard"
 import CRTImage from "@/components/media/CRTImage"
 
-export default function EPKScene({ intercepted }: { intercepted?: boolean }) {
+export default function EPKScene({ intercepted: _intercepted }: { intercepted?: boolean }) {
   const generatePDF = async (type: 'desktop' | 'mobile') => {
     try {
       const response = await fetch('/api/generate-pdf', {

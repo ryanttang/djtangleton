@@ -20,7 +20,7 @@ export default function AudioPlayer() {
   const [loading, setLoading] = useState(false)
   const [isMuted, setIsMuted] = useState(false)
   const [isMinimized, setIsMinimized] = useState(false)
-  const iframeRef = useRef<HTMLIFrameElement>(null)
+  const _iframeRef = useRef<HTMLIFrameElement>(null)
 
   // Initialize with first track
   useEffect(() => {

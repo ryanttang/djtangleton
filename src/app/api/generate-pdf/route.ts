@@ -64,7 +64,7 @@ export async function POST(request: NextRequest) {
     
     await browser.close()
     
-    return new NextResponse(pdf, {
+    return new NextResponse(pdf as BodyInit, {
       headers: {
         'Content-Type': 'application/pdf',
         'Content-Disposition': `attachment; filename="tangleton-epk-${type}.pdf"`

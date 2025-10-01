@@ -411,7 +411,7 @@ async function generateEPKHTML(type: 'desktop' | 'mobile'): Promise<string> {
           <!-- Bio Card -->
           <div class="card ${isMobile ? 'mobile-full-width' : ''}">
             <h3>Bio</h3>
-            <p>LA-based DJ blending house, breaks, and glitchy VHS textures into immersive electronic experiences. Known for creating atmospheric soundscapes that transport audiences through analog nostalgia and digital futures. Tangleton's sets seamlessly weave between genres, creating unique moments that resonate with both underground and mainstream audiences.</p>
+            <p>Vietnamese American LA-based DJ specializing in curating the waviest blends from the sounds that makes you groove and bounce. Known for creating atmospheric soundscapes that transport audiences through analog nostalgia and digital futures. Tangleton's sets seamlessly weave between genres, creating unique moments that resonate with both underground and mainstream audiences.</p>
           </div>
           
           <!-- Played At Card -->

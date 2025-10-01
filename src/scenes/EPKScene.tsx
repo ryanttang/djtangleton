@@ -93,7 +93,7 @@ export default function EPKScene({ intercepted }: { intercepted?: boolean }) {
         <CRTCard className="p-6 h-fit">
           <h3 className="text-3xl font-bold rgb-split mb-4">Bio</h3>
           <p className="text-white/80 leading-relaxed mb-6">
-            LA-based DJ blending house, breaks, and glitchy VHS textures into immersive electronic experiences. 
+            Vietnamese American LA-based DJ specializing in curating the waviest blends from the sounds that makes you groove and bounce. 
             Known for creating atmospheric soundscapes that transport audiences through analog nostalgia and 
             digital futures. Tangleton&apos;s sets seamlessly weave between genres, creating unique moments that 
             resonate with both underground and mainstream audiences.
